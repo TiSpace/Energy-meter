@@ -1,6 +1,6 @@
 # Energy-meter
 Webserver for PZEM-004T energy meter.
-Descrption on my website https://sites.google.com/site/tsrprojekt/elektronikprojekte/energy-meter
+Description on my website https://sites.google.com/site/tsrprojekt/elektronikprojekte/energy-meter
 Blockdiagram as follows
 ![Blockdiagram](/pic/Blockdiagramm.drawio.png)
 The energy device PZEM-04T is doing the measurement and provides data via RS232 interface
