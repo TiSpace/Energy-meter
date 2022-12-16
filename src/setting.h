@@ -1,6 +1,6 @@
 
-unsigned long myChannelNumber = 1957995;
-const char * myWriteAPIKey = "ZNGV19VNOCO4WVXQ";
+unsigned long myChannelNumber = 12345678;
+const char * myWriteAPIKey = "abcdefghijklm";
 
 
 
