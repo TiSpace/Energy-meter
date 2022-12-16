@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Powermeasure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    
+  </head>
+  <body>
+    <h1>Energiemesser</h1>
+    <aside id="links"></aside>
+    <aside id="rechts"></aside>
+
+    <div class="grid-container">
+      <div class="grid-item">Spannung</div>
+      <div><p class="Messwert" id="Spg">...</p></div>
+      <div class="grid-item">Strom</div>
+      <div><p class="Messwert" id="Cur">...</p></div>
+      <div class="grid-item">Power</div>
+      <div><p class="Messwert" id="pow">...</p></div>
+      <div class="grid-item">Energy</div>
+      <div><p class="Messwert" id="ene">...</p></div>
+      <div class="grid-item">Frequenz</div>
+      <div><p class="Messwert" id="freq">...</p></div>
+      <div class="grid-item">Powerfactor</div>
+      <div><p class="Messwert" id="pf">...</p></div>
+    </div>
+    <div class="grid-container3">
+     
+        <a href=""><button class="button">update</button></a>
+        <a href="https://thingspeak.com/channels/1957995" target="_blank"><button class="button">Thingspeak</button></a>
+        <a href="/setting.html"><button class="button">Setting</button></a>
+
+        <!--<a href="/RESET"><button class="button2">RESET counter</button></a>-->
+      </p>
+    </div>
+   
+    <br />
+    <br />
+    Stand von <span id="time"> </span>
+    <br />
+
+    Arduino is running Sketch: <span id="myFile"> </span> 
+    Compiled on: <span id="compileDate"> </span> <br/>
+    MacAddress: <span id="myMAC"></span>   
+    IP address: <span id="myIP"></span> <br/>
+    SSID: <span id="mySSID"></span>
+    mit <span id="mySIG"></span> dBm
+    
+    <br />
+  </body>
+</html>

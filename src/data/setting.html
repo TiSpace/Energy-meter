@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Powermeasure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- <script src="script.js"></script>-->
+
+    <script>
+      	//https://www.wikinger-tommy.de/rentner/index.html
+      	function btnPressed(myID){
+      	console.log(document.getElementById("mySlider").value);
+      	console.log(document.getElementById("storeTS").checked);
+      	console.log(myID);
+      	if (myID=="RST"){
+			let isExecuted = confirm("Sicher den Zähler zurücksetzen?");
+      		console.log(isExecuted); // OK = true, Cancel = false   https://sebhastian.com/javascript-confirmation-yes-no/
+      		if (isExecuted){
+      			//window.open("/RESET");
+      			//alert("Reset");
+      			fetch('/modified?reset=1')
+      		}else{
+      			//alert("FalscherAlarm");
+      			//.then( function(response){
+				//	return response.text();
+				//})
+				//.then (function(text){
+				// do somethinge else
+			//});
+      		};
+      	}else{
+			fetch('/modified?interval='+ document.getElementById("mySlider").value+'&storeTS=' +document.getElementById("storeTS").checked )
+			.then( function(response){
+				return response.text();
+			})
+			.then (function(text){
+				// do somethinge else
+			});
+      	};
+
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Energiemesser Einstellungen</h1>
+<main>
+      <input type="checkbox" id="storeTS" name="storeTS" value="1" />
+      <label for="storeTS"> speichern in Thingspeak</label><br />
+      <div class="slidecontainer">
+        <p>Intervall in sek: <span id="TSInterval"></span></p>
+      </div>
+
+      <input
+        type="range"
+        min="30"
+        max="900"
+        class="slider"
+        id="mySlider"
+        value="50"
+        step="30"
+        <br
+      />
+</main>
+<br>
+<br>
+<br>
+<br>
+      <div class="grid-container3">
+        <button
+          type="button"
+          class="button"
+          id="storeValue"
+          onclick="btnPressed(id)"
+        >
+          Senden
+        </button>
+		
+        <!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
+
+        <a href="index.html"><button class="button">zurück</button></a>
+		<button
+          type="button"
+          class="button"
+          
+          id="RST"
+          onclick="btnPressed(id)"
+		  >
+		  RESET
+        </button>
+		
+      </div>
+	  
+    <!--</form>-->
+
+    <script src="scriptSetting.js"></script>
+
+
+  </body>
+</html>
